@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NASA Photo of the Day</string>
+    <string name="api_key">liRJjTtyJ3fLG9GpDshB4mJ5jghIDuuEfIdcdgyn</string>
+    <string name="string_play">Play</string>
+    <string name="select_date">Select date</string>
+    <string name="set_date">Set date</string>
+    <string name="no_internet">No Internet Connection</string>
+    <string name="text_retry">Retry</string>
+</resources>

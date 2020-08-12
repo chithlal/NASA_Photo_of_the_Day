@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="size_toolbar_icon">40dp</dimen>
+    <dimen name="height_decription_text">200dp</dimen>
+    <dimen name="text_size_description">16sp</dimen>
+    <dimen name="size_anim_loading">200dp</dimen>
+</resources>

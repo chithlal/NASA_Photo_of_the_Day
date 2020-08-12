@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    tools:context=".main_ui.MainActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/toolbar_height"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="8dp"
+        android:fitsSystemWindows="false"
+        android:minHeight="@dimen/toolbar_height"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:gravity="center"
+            android:fitsSystemWindows="false"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:fitsSystemWindows="false"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.7"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textColor="@color/black"
+                android:fitsSystemWindows="false"
+                android:textSize="@dimen/text_size_title"
+                tools:text="Title" />
+
+            <ImageView
+                android:id="@+id/bt_date_picker"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_toolbar_icon"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:fitsSystemWindows="false"
+                android:contentDescription="@string/select_date"
+                android:layout_weight=".3"
+                android:src="@drawable/ic_round_today_24" />
+        </LinearLayout>
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:datePickerMode="spinner"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:fitsSystemWindows="false"
+            android:calendarViewShown="false"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading_anim"
+        android:layout_width="@dimen/size_anim_loading"
+        android:layout_height="@dimen/size_anim_loading"
+        android:fitsSystemWindows="false"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_toolbar"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/rocket" />
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_toolbar" />
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/youtube_player_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:enableAutomaticInitialization="true"
+        app:useWebUi="false"
+        android:fitsSystemWindows="false"
+        app:layout_constraintTop_toBottomOf="@id/card_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        app:autoPlay="false"
+         />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="@dimen/height_decription_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="8dp"
+        android:maxLines="8"
+        android:textSize="@dimen/text_size_description"
+        android:scrollbars="vertical"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:fitsSystemWindows="false"
+        android:background="@color/text_view_transparent_bg"
+        app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/network_status">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_round_signal_wifi_off_24"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:textSize="@dimen/text_size_title"
+            android:text="@string/no_internet"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/bt_retry"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_title"
+            android:text="@string/text_retry"/>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:translationZ="8dp"
+        android:visibility="gone"
+        android:contentDescription="@string/string_play"
+        android:scaleType="center"
+        android:fitsSystemWindows="false"
+        android:src="@drawable/ic_baseline_play_arrow_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_toolbar"
+        app:layout_constraintVertical_bias="1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
